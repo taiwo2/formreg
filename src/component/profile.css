@@ -1,0 +1,24 @@
+.profile{
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile p {
+  text-align: left;
+}
+
+.profile > span{
+  color: blue;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.center {
+  display: block;
+  width: 100%;
+  max-width: 40.0rem;
+  margin: 4rem auto 6rem;
+}
