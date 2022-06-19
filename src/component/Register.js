@@ -1,6 +1,6 @@
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import './forms.css'
-import {auth, handleUserProfile} from './firebase'
+import {auth} from './firebase'
 import {useNavigate, Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
 import {useAuthValue} from './AuthContext'
@@ -31,7 +31,7 @@ function Register() {
     try {
       if(validatePassword()) {
       // Create a new user with email and password using firebase
-       const {user} = createUserWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
           sendEmailVerification(auth.currentUser)   
           .then(() => {
@@ -43,17 +43,12 @@ function Register() {
         setPassword('')
         setConfirmPassword('')
     }
-
-    
-
     }catch(er){
       // console.log(err)
     }
     
   }
-  useEffect(async() => {
-    register()
-  }, [])
+ 
   return (
     <div className='center'>
       <div className='auth'>
